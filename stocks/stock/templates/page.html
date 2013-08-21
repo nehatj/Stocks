@@ -1,0 +1,16 @@
+{% load pagination_tags %}
+<html>
+<head>
+<title>
+hi</title>
+</head>
+<body>
+{% autopaginate stock_list %}
+{% for share in stock_list %}
+ <h5>{{ share.title }}</h5>
+                    <p>  {{ share.contents }}</p>
+                  <hr/>
+{% endfor %}
+</body>
+</html>
+

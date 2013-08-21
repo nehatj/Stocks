@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}Welcome to BLACK MARKET{% endblock %}
+
+{% block content %}
+<div class="container"><br/> </div>
+
+{% if stock_list %}
+
+<h2>something something </h2>
+<form action="/" method="post">
+<input type="text" id="dob" name="dob" placeholder="enter keywords" />
+<input type="submit"/>
+<br />
+
+<!--     
+<ul>--> 
+        {% for share in newstock_list %}
+                <input type="checkbox" name="keywords" id="keywords" value={{ share.keywords }} />{{ share.keywords }}
+        {% endfor %}
+        <input type="Submit"/>
+
+        {% for share in stock_list %}
+       <!--        <li><a href ='/stock/{{ share.id }}'> topic:{{ share.keywords }}</a></li>-->
+
+                <h5>{{ share.title }}</h5>
+                  <p>  {{ share.contents }}</p>
+                <hr/>
+                    {% endfor %}
+                    
+                    {% else %}
+                            <p>No topic are available.</p>
+{% endif %}
+</form>
+ {% endblock %}
+
+
+

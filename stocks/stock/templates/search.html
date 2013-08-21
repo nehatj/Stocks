@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome to BLACK MARKET{% endblock %}
+ {% block content %}
+ <div class="container"><br/> </div>
+{% if stock_list %}
+ <h2>Result</h2>
+ <h3>todays date</h3>
+ {{ stock_list }}
+<ul>
+ {% for share in stock_list %}
+ <li><a href ='/share/{{ share.id }}'> topic:{{ share.keywords }}</a></li>
+
+{% endfor %}
+   </ul>
+   {% else %}
+   <p>no topic are available.</p>
+   {% endif %}
+{% endblock %}
